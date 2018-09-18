@@ -1,8 +1,25 @@
 # Introdução
 Projeto para avaliação de candidaturas de uma empresa.
+>Construído em .NET Core, utilizando a abordagem DDD (Design Domain Driven).
 
-Construído em .NET Core, utilizando a abordagem DDD (Design Domain Driven), criando uma arquitetura própria.
-Utilizando ubiquous language (linguagem onipresente).
+
+# Sumário
+<!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Estrutura da Solução](#estrutura-da-solução)
+- [Utilização](#utilização)
+- [Endpoints](#endpoints)
+     - [Vagas](#vagas)
+     - [Pessoas](#pessoas)
+     - [Candidaturas](#candidaturas)
+- [Observações de Código](#observações-de-código)
+     - [Includes](#includes)
+- [Implementações](#implementações)
+- [Criação](#criação)
+- [Licença](#licença)
+
+<!-- /TOC -->
+
 
 ## Estrutura da solução
 * SmartHR
@@ -65,7 +82,7 @@ Exemplo :
           }
           ```
 
-### Pessoas (Candidatos)
+### Pessoas
 
 | Método | Rota | Descrição |
 |------------ |--------|--------  
