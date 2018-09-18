@@ -67,20 +67,19 @@ JSON esperado:
 | `titulo` | `string` | |
 | `descricao` | `string` | |
 | `localizacao` | `string` | Pelos requisitos, só podem ser enviadas as letras: A, B, C, D, E ou F |
-| `nivel` | `int` | |
+| `nivel` | `int`  |  |
 
 Exemplo : 
-        ```
-        javascript
-          {
-                "id": 1,
-                "empresa": "Teste (Atualizando)",
-                "titulo": "Vaga teste",
-                "descricao": "Criar os mais diferentes tipos de teste",
-                "localizacao": "A",
-                "nivel": 3
-          }
-          ```
+```javascript
+{
+      "id": 1,
+      "empresa": "Teste (Atualizando)",
+      "titulo": "Vaga teste",
+      "descricao": "Criar os mais diferentes tipos de teste",
+      "localizacao": "A",
+      "nivel": 3
+}
+```
 
 ### Pessoas
 
