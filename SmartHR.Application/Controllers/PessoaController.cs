@@ -75,7 +75,7 @@ namespace SmartHR.Application.Controllers
         {
             try
             {
-                return new ObjectResult(_service.Obter());
+                return new ObjectResult(_service.ObterTodos());
             }
             catch (Exception ex)
             {
@@ -88,7 +88,7 @@ namespace SmartHR.Application.Controllers
         {
             try
             {
-                return new ObjectResult(_service.Obter(pessoaID));
+                return new ObjectResult(_service.ObterPessoaPorID(pessoaID));
             }
             catch (ArgumentException ex)
             {

@@ -79,7 +79,7 @@ namespace SmartHR.Service.Services
 
                 return Inserir<CandidaturaValidator>(candidatura);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

@@ -41,7 +41,12 @@ namespace SmartHR.Infra.Data.Repository
 
         public void Excluir(int id)
         {
-            DbSet.Remove(Obter(id));
+            var objExclusao = Obter(id);
+
+            if (objExclusao == null)
+                throw new Exception($"Objeto com o ID '{id}' não existe.");
+
+            DbSet.Remove(objExclusao);
             _context.SaveChanges();
         }
 
@@ -83,10 +88,7 @@ namespace SmartHR.Infra.Data.Repository
             {
                 var q = DbSet.Include(includes.First());
 
-                foreach (var property in includes.Skip(1))
-                {
-                    q = q.Include(property);
-                }
+                includes.Skip(1).ToList().ForEach(p => q = q.Include(p));
 
                 return condicao != null ?
                     q.Where(condicao).AsQueryable() :
@@ -114,6 +116,9 @@ namespace SmartHR.Infra.Data.Repository
         public bool Excluir(Expression<Func<TEntity, bool>> condicao)
         {
             var model = DbSet.Where(condicao).FirstOrDefault();
+
+            if (model == null)
+                throw new Exception("Nenhuma candidatura com essa condição foi encontrada");
 
             return (model != null) && Excluir(model);
         }

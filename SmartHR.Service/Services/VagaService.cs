@@ -16,5 +16,15 @@ namespace SmartHR.Service.Services
             _repository = repository;
         }
 
+
+        public Vaga ObterPorID(int id)
+        {
+            return _repository.Obter(wh => wh.Id == id, i => i.Candidaturas);
+        }
+        public List<Vaga> ObterTodos()
+        {
+            return _repository.ObterTodos(null, i => i.Candidaturas).ToList();
+        }
+
     }
 }

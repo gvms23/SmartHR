@@ -11,7 +11,6 @@ using SmartHR.Service.Validators;
 
 namespace SmartHR.Application.Controllers
 {
-    [Route("~/")]
     public class ApiController : Controller
     {
 
@@ -29,7 +28,14 @@ namespace SmartHR.Application.Controllers
             _serviceCandidatura = serviceCandidatura;
         }
 
-        public IActionResult Get()
+        [Route("~/")]
+        public IActionResult RotaPrincipal()
+        {
+            return new ObjectResult("API .NET Core da aplicação SmartHR está sendo executado! Para inserir dados de teste, vá em /api");
+        }
+
+        [Route("/api")]
+        public IActionResult InserirDadosTeste()
         {
             try
             {

@@ -64,7 +64,7 @@ namespace SmartHR.Application.Controllers
             {
                 _service.Excluir(vagaID);
 
-                return new NoContentResult();
+                return new ObjectResult("Registro excluído com sucesso.");
             }
             catch (ArgumentException ex)
             {
@@ -81,7 +81,7 @@ namespace SmartHR.Application.Controllers
         {
             try
             {
-                return new ObjectResult(_service.Obter());
+                return new ObjectResult(_service.ObterTodos());
             }
             catch (Exception ex)
             {
@@ -94,7 +94,7 @@ namespace SmartHR.Application.Controllers
         {
             try
             {
-                return new ObjectResult(_service.Obter(vagaID));
+                return new ObjectResult(_service.ObterPorID(vagaID));
             }
             catch (ArgumentException ex)
             {

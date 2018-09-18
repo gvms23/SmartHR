@@ -39,8 +39,8 @@ namespace SmartHR.Application.Controllers
                 return BadRequest(ex);
             }
         }
-        [HttpDelete, Route("{pessoaID:int}/{vagaID:int}")]
-        public IActionResult Excluir(int pessoaID, int vagaID)
+        [HttpDelete, Route("{vagaID:int}/{pessoaID:int}")]
+        public IActionResult Excluir(int vagaID, int pessoaID)
         {
             try
             {
